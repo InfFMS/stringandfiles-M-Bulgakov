@@ -6,3 +6,21 @@
 # слово2: количество
 #
 # Убедитесь, что слова записаны в алфавитном порядке.
+import re
+r = {}
+o = []
+f = open('task3.txt', encoding="utf-8")
+s1 = f.read()
+s = re.split(r'[ .,\n]+',s1)
+print(s)
+'''for i in s:
+    e = i.split(' ')
+    print(e)
+    o = e[:-2:]
+    print(o)
+    for j in e:
+        if j not in r:
+            r
+
+print(r)'''
+f.close()
