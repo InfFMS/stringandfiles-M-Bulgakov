@@ -8,19 +8,25 @@
 # Убедитесь, что слова записаны в алфавитном порядке.
 import re
 r = {}
+count = 1
 o = []
 f = open('task3.txt', encoding="utf-8")
 s1 = f.read()
-s = re.split(r'[ .,\n]+',s1)
-print(s)
-'''for i in s:
-    e = i.split(' ')
-    print(e)
-    o = e[:-2:]
-    print(o)
-    for j in e:
-        if j not in r:
-            r
+s2 = s1.lower()
+s1 = re.split(r'[ .,\n]+',s2)
+s = s1.sort()
+for i in range(1,len(s1)):
+    if s1[i] == s1[i-1]:
+        count += 1
+    if s1[i] != s1[i-1]:
+        r[s1[i-1]] = count
+        count = 1
 
-print(r)'''
+r.pop('')
 f.close()
+result = str(r)
+r1 = result[1:-1:].replace(', ','\n')
+
+d = open('task3-1.txt','x',encoding="utf-8")
+s1 = d.write(r1)
+d.close()
