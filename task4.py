@@ -3,3 +3,26 @@
 # Слова во всех предложениях должны быть приведены к верхнему регистру.
 # Между словами вместо пробела ставится символ "_".
 # После записи откройте этот файл, считайте содержимое и выведите его на экран.
+import re
+
+f = open('task4-1.txt','x', encoding="utf-8")
+f.close()
+
+
+f = open('task4-1.txt','a', encoding="utf-8")
+
+for i in range(5):
+    s1 = input()
+    s2 = s1.upper()
+    s1 = s2.replace(' ','_')
+    #s1 = re.split(r'[ .,\n]+', s2)
+    #s2 = '_'.join(s1)
+    f.seek(0, 2)
+    f.write(s1+'\n')
+f.close()
+
+
+f = open('task4-1.txt','r', encoding="utf-8")
+s1  = f.read()
+print(s1)
+f.close()
