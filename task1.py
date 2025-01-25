@@ -4,3 +4,20 @@
 # Общее количество слов во всем тексте файла.
 # Общее количество символов (включая пробелы).
 # Выведите полученную статистику на экран.
+import re
+f = open('task1.txt', encoding="utf-8")
+e = f.read()
+s1 = e
+s2 = s1.split('\n')
+print(len(s2))
+s = re.split(r'[.—\n,! ?-]+',s1)
+s = s[:-1:]
+print(len(s))
+
+a = e
+s = re.split(r'[.—]+',a)
+a = ''.join(s)
+print(len(a))
+
+f.close()
+

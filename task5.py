@@ -5,3 +5,14 @@
 # Его длина: длина
 #
 # Выведите это слово и длину в консоль.
+import re
+
+f = open('task5.txt','r', encoding="utf-8")
+s2 = f.read()
+s1 = re.split(r'[ ?!:;.,\n]+', s2)
+s2 = max(s1, key=len)
+f.close()
+
+f = open('task5-1.txt','x', encoding="utf-8")
+f.write('Самое длинное слово: '+s2+'\nЕго длина: '+ (str(len(s2))))
+f.close()
